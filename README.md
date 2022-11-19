@@ -38,8 +38,12 @@
 <h4 align="center">Deployed On:</h4>
 
 <p align="center">
+<a href="https://justshop-unit5-project.netlify.app/">
   <img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="vercel" />
+</a>  
+<a href="https://sample-backend-cvar.onrender.com">
   <img src="https://img.shields.io/badge/Render-430098?style=for-the-badge&logo=heroku&logoColor=white" alt="heroku" />
+  </a>
 </p>
 
 
@@ -151,8 +155,8 @@ its Fully Responsive e-commerce web application that allows you to buy shoes & c
 This project was built using React, Chakra UI, HTML, CSS, JavaScript, Rest API . It is an e-commerce web application and for running on your local environment you should follow these guidelines.
 
 
-# PROJECT VERCEL LINK
-https://bewakoof-clone-sufi.vercel.app/
+# PROJECT NETLIFY LINK
+https://justshop-unit5-project.netlify.app/
 
 # Getting Started with Create React App
 
@@ -198,12 +202,12 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ## Contact
 
 If you want to contact me, you can reach me through below handles. <br />
-[![linkedin](https://img.shields.io/badge/Sufiyan_Shaikh-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sufiyan-shaikh-9bb808183/)
-[![GitHub](https://img.shields.io/badge/Sufiyan_Shaikh-20232A?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/suFi7867)
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn--informational?style=flat&logo=linkedin&logoColor=blue&color=blue)](https://www.linkedin.com/in/shubhamgaikwad7/)
+ [![GitHub Badge](https://img.shields.io/badge/GitHub--informational?style=flat&logo=github&logoColor=white&color=blue)](https://github.com/gShubham7)
 
 
 
-© 2022 Sufiyan Shaikh
+© 2022 Shubham Gaikwad
 
 
 

@@ -1,0 +1,18 @@
+
+
+.box1{
+    /* width:80%; */
+    display:flex;
+    gap:2rem;
+    justify-content: center;
+    align-items: center;
+    margin-top:2rem;
+}
+
+.banner{
+    width: 800px;
+}
+
+.ad{
+   width: 418px;
+}

@@ -1,0 +1,17 @@
+
+
+1 ) fw19_0218 Shaikh Sufiyan  
+  => { Navbar , Footer, Single Product Page, Filtering , Searching, Sorting , Payment Page }
+
+2 ) fw17_0240 Akanksha Malviya
+ => { Landing Page , Checkout Page, Responsiveness, Admin Functionalities}
+
+3 ) fw20_0193 Shubham Gaikwad
+ => { SignIn Page , Register Page, Responsiveness, Backend Authentication, Admin Functionalities}
+
+4 ) fw20_0252 Ankit Singh Rajawat
+ => { Mens Page ,Womens Page, Electronics Page, Responsiveness, Admin Functionalities}
+
+5 ) fw17_0732 Akash Gupta
+ => { Cart Page , Responsiveness}
+

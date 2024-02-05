@@ -7,8 +7,7 @@ import {
   GET_CART_ITEMS_SUCCESS,
 } from "./cart.types";
 
-// Note: Do not update/change the initial state
-const cartInitalState = {
+const cartInitialState = {
   getCartItems: {
     loading: false,
     error: false,
@@ -28,14 +27,8 @@ const cartInitalState = {
   data: [],
 };
 
-// GET_CART_ITEMS_LOADING
-// GET_CART_ITEMS_SUCCESS
-// GET_CART_ITEMS_ERROR
-
-export const cartReducer = (state = cartInitalState, { type, payload }) => {
+export const cartReducer = (state = cartInitialState, { type, payload }) => {
   switch (type) {
-    /////////////////GET//////////////////
-
     case GET_CART_ITEMS_LOADING: {
       return {
         ...state,
@@ -58,8 +51,6 @@ export const cartReducer = (state = cartInitalState, { type, payload }) => {
       };
     }
 
-    /////////////////ADD//////////////////
-
     case ADD_ITEM_TO_CART_LOADING: {
       return {
         ...state,
@@ -81,7 +72,6 @@ export const cartReducer = (state = cartInitalState, { type, payload }) => {
         addCartItem: { loading: false, error: true },
       };
     }
-    /////////////////REMOVE//////////////////
 
     default: {
       return state;

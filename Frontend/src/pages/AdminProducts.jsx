@@ -1,0 +1,94 @@
+import React, { useState } from "react";
+import {
+  Spacer,
+  Text,
+  RadioGroup,
+  HStack,
+  VStack,
+  Image,
+  Textarea,
+  Box,
+  Radio,
+  Flex,
+  Button,
+} from "@chakra-ui/react";
+import { useDispatch } from "react-redux";
+import { ACTION_ADD_PRODUCT } from "../redux/admin/admin.actions";
+
+const AdminProducts = () => {
+  const [value, setValue] = useState("mens");
+  const [area, setArea] = useState("");
+  const dispatch = useDispatch();
+
+  const AddToDatabase = () => {
+    dispatch(ACTION_ADD_PRODUCT({ value: value, area: area }));
+    setValue("mens");
+  };
+
+  return (
+    <Flex gap="10rem" justifyContent="center" alignItems="center">
+      <Flex direction="column" justifyContent="center" alignItems="center">
+        <Box>
+          <Image
+            minWidth="400px"
+            src="https://thumbs.gfycat.com/CompleteShallowFlyingsquirrel-size_restricted.gif"
+          />
+        </Box>
+      </Flex>
+
+      <Flex
+        p={50}
+        direction="column"
+        justifyContent="center"
+        alignItems="flex-start"
+        gap="1.2rem"
+      >
+        <Flex
+          direction="column"
+          justifyContent="center"
+          alignItems="flex-start"
+          gap="1.2rem"
+        >
+          <Text fontSize="1.5rem" fontWeight="bold" color="#0D6DD7">
+            Choose Category
+          </Text>
+        </Flex>
+
+        <HStack alignItems="flex-start" spacing="1rem">
+          <VStack>
+            <Textarea
+              placeholder="Here is a sample placeholder"
+              height="360px"
+              width="350px"
+              value={area}
+              onChange={(e) => setArea(e.target.value)}
+            />
+          </VStack>
+          <RadioGroup value={value} onChange={setValue}>
+            <VStack spacing="24px" align="left">
+              <Radio value="mens">Men</Radio>
+              <Radio value="womens">Women</Radio>
+              <Radio value="electronics">Electronics</Radio>
+            </VStack>
+
+            <Spacer />
+
+            <Button
+              height="50px"
+              width="200px"
+              fontSize="1.3rem"
+              color="white"
+              bg="#0D6DD7"
+              marginTop="1rem"
+              onClick={() => AddToDatabase()}
+            >
+              ADD PRODUCTS
+            </Button>
+          </RadioGroup>
+        </HStack>
+      </Flex>
+    </Flex>
+  );
+};
+
+export default AdminProducts;

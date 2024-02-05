@@ -9,9 +9,12 @@ import {
 export const login = (creds) => async (dispatch) => {
   dispatch({ type: LOGIN_REQUEST });
   try {
-    let res = await axios.post("https://sample-backend-cvar.onrender.com/user/login", creds);
+    let res = await axios.post(
+      `${process.env.REACT_APP_BASE_URL}/user/login`,
+      creds
+    );
     dispatch({ type: LOGIN_SUCCESS, payload: res.data });
-    
+
     return res.data;
   } catch (error) {
     dispatch({ type: LOGIN_ERROR, payload: error.message });

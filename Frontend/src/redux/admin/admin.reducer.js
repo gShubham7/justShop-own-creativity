@@ -1,5 +1,3 @@
-import { useDispatch } from "react-redux";
-import { ACTION_GET_PRODUCTS } from "../products/product.actions";
 import {
   GET_ADMIN_ERROR,
   GET_ADMIN_LOADING,
@@ -12,14 +10,13 @@ import {
   ADD_PRODUCT_SUCCESS,
 } from "./admin.types";
 
-// Note: Do not update/change the initial state
-const adminInitalState = {
+const adminInitialState = {
   loading: false,
   error: false,
   data: { carts: [], users: [] },
 };
 
-export const adminReducer = (state = adminInitalState, { type, payload }) => {
+export const adminReducer = (state = adminInitialState, { type, payload }) => {
   switch (type) {
     case GET_ADMIN_LOADING || DELETE_PRODUCT_LOADING || ADD_PRODUCT_LOADING: {
       return {

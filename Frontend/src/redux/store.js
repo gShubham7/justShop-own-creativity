@@ -16,7 +16,7 @@ const rootReducer = combineReducers({
   auth: authReducer,
   product: productReducer,
   cart: cartReducer,
-  admin: adminReducer
+  admin: adminReducer,
 });
 
 const createComposer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

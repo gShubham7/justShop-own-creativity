@@ -1,5 +1,3 @@
-// Cart Actions here
-
 import axios from "axios";
 import {
   ADD_ITEM_TO_CART_ERROR,
@@ -13,19 +11,11 @@ import {
   REMOVE_CART_ITEMS_SUCCESS,
 } from "./cart.types";
 
-// redux doesnt handle asynchronous REQUEST
-// redux thunk external librariy
-// to handle asynchronous REQUEST
-
-/// asynchronous Function
-
 export const ACTION_GET_CART = (token) => async (dispatch) => {
   dispatch({ type: GET_CART_ITEMS_LOADING });
   try {
-    let res = await axios.get("https://sample-backend-cvar.onrender.com/cart");
-    //   console.log(res.data)
-    const unique = res.data.find((el) => el.token == token);
-    // console.log(unique)
+    let res = await axios.get(`${process.env.REACT_APP_BASE_URL}/cart`);
+    const unique = res.data.find((el) => el.token === token);
     return dispatch({ type: GET_CART_ITEMS_SUCCESS, payload: unique.cartData });
   } catch (err) {
     dispatch({ type: GET_CART_ITEMS_ERROR, payload: err.message });
@@ -38,8 +28,8 @@ export const ACTION_ADD_ITEM_TO_CART =
     dispatch({ type: ADD_ITEM_TO_CART_LOADING });
 
     try {
-      await axios.post("https://sample-backend-cvar.onrender.com/cart", payload);
-      //  console.log(res.data)
+      await axios.post(`${process.env.REACT_APP_BASE_URL}/cart`, payload);
+
       return dispatch({
         type: ADD_ITEM_TO_CART_SUCCESS,
         payload: payload.data,
@@ -64,23 +54,24 @@ export const ACTION_ADD_ITEM_TO_CART =
 //       dispatch({ type: REMOVE_CART_ITEMS_ERROR, payload: err.message });
 //     }
 //   };
-export const ACTION_REMOVE_ITEM_CART = (payload=1)=> async (dispatch)=>{
-    dispatch({ type: REMOVE_CART_ITEMS_LOADING})
-   
-    try{
-        await axios.delete(`https://sample-backend-cvar.onrender.com/cart`, {
-            headers : {
-                "Content-Type" : "application/json"
-            },
-            data : {
-                 id: payload.id,
-                 token: payload.token
-            }
-        })
-        dispatch({ type : REMOVE_CART_ITEMS_SUCCESS })
-        return dispatch(ACTION_GET_CART(payload.token))
-    }catch(err){
-        dispatch({ type : REMOVE_CART_ITEMS_ERROR , payload : err.message })
-    }
+export const ACTION_REMOVE_ITEM_CART =
+  (payload = 1) =>
+  async (dispatch) => {
+    dispatch({ type: REMOVE_CART_ITEMS_LOADING });
 
-}
+    try {
+      await axios.delete(`${process.env.REACT_APP_BASE_URL}/cart`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        data: {
+          id: payload.id,
+          token: payload.token,
+        },
+      });
+      dispatch({ type: REMOVE_CART_ITEMS_SUCCESS });
+      return dispatch(ACTION_GET_CART(payload.token));
+    } catch (err) {
+      dispatch({ type: REMOVE_CART_ITEMS_ERROR, payload: err.message });
+    }
+  };

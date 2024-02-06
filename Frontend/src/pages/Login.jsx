@@ -16,7 +16,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { login } from "../redux/auth/auth.actions";
 import { signInWithGoogle } from "../config/firbase";
 import Loading from "../components/Loding";
@@ -26,6 +26,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const [loginCreds, setLoginCreds] = useState({});
   const toast = useToast();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -65,10 +66,10 @@ const Login = () => {
     return <Loading />;
   }
   if (error) {
-    return <Navigate to="/login" />;
+    return navigate("/login");
   }
   if (isAuth) {
-    return <Navigate to="/" />;
+    return navigate("/");
   }
 
   return (

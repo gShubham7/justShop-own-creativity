@@ -6,17 +6,17 @@ const cors = require("cors");
 const PORT = process.env.PORT;
 const app = express();
 app.use(express.json());
-app.use(cors()); /// Ye File Upar Rahengi
+app.use(cors());
 
-const UserRoute = require("./features/user/user.router");
-const MenRoute = require("./features/mens/mens.router");
-const WomenRoute = require("./features/womens/womens.router");
-const ElectronicRoute = require("./features/electronics/electronics.router");
-const CartRoute = require("./features/cart/cart.router");
-const UsersRoute = require("./features/users/users.router");
-const cartsRoute = require("./features/carts/carts.router");
+const AuthRoute = require("./routes/auth.router");
+const MenRoute = require("./routes/mens.router");
+const WomenRoute = require("./routes/womens.router");
+const ElectronicRoute = require("./routes/electronics.router");
+const CartRoute = require("./routes/cart.router");
+const UsersRoute = require("./routes/users.router");
+const cartsRoute = require("./routes/carts.router");
 
-app.use("/user", UserRoute);
+app.use("/auth", AuthRoute);
 app.use("/mens", MenRoute);
 app.use("/womens", WomenRoute);
 app.use("/electronics", ElectronicRoute);

@@ -1,9 +1,10 @@
 const express = require("express");
+const Carts = require("../models/carts.model");
 const app = express.Router();
-const Users = require("./users.model");
+
 app.get("/", async (req, res) => {
   try {
-    let data = await Users.find();
+    let data = await Carts.find();
 
     res.send(data);
   } catch (e) {
@@ -12,8 +13,3 @@ app.get("/", async (req, res) => {
 });
 
 module.exports = app;
-
-// {
-//   token:"sufi@gmail.com#123456",
-//   cartData:[{},{}]
-// }

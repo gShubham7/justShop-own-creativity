@@ -1,8 +1,6 @@
-const express = require("express");
-const app = express.Router();
-const User = require("./user.model");
+const User = require("../models/user.model");
 
-app.post("/login", async (req, res) => {
+const login = async (req, res) => {
   const { email, password } = req.body;
   try {
     let user = await User.findOne({ email });
@@ -20,9 +18,9 @@ app.post("/login", async (req, res) => {
   } catch (e) {
     res.status(404).send(e.massage);
   }
-});
+};
 
-app.post("/signup", async (req, res) => {
+const register = async (req, res) => {
   const { name, surname, email, password } = req.body;
 
   try {
@@ -45,6 +43,6 @@ app.post("/signup", async (req, res) => {
   } catch (e) {
     res.status(404).send(e.massage);
   }
-});
+};
 
-module.exports = app;
+module.exports = { login, register };

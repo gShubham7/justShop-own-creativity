@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express.Router();
-const Cart = require("./cart.model");
+const Cart = require("../models/cart.model");
 app.get("/", async (req, res) => {
   try {
     let data = await Cart.find();

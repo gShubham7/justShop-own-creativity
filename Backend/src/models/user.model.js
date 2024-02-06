@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
 });
-// second arg after schema firt obj end ,{versionKey:true,timestamps:true}
+
 const User = mongoose.model("user", userSchema);
 
 module.exports = User;

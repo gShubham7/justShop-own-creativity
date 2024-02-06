@@ -7,7 +7,7 @@ import {
 
 export const ACTION_GET_PRODUCTS = () => async (dispatch) => {
   dispatch({ type: GET_PRODUCTS_LOADING });
-  // console.log("data")
+
   try {
     let res1 = await axios.get(`${process.env.REACT_APP_BASE_URL}/mens`);
     let res2 = await axios.get(`${process.env.REACT_APP_BASE_URL}/womens`);

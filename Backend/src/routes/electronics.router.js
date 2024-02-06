@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express.Router();
-const Electronic = require("./electronics.model");
+const Electronic = require("../models/electronics.model");
 
 app.get("/", async (req, res) => {
   //   const { limit = 10, page = 1 } = req.query;
